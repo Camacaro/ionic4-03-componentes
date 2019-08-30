@@ -1,0 +1,40 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start" >
+            <!-- forma larga -->
+            <!-- <ion-button (click)="toggleMenu()">
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button> -->
+
+            <!-- menu: va el id qeu se le asigno al menu -->
+            <ion-menu-button slot="start" color="primary" menu="primerMenu">
+            </ion-menu-button>
+
+        </ion-buttons>
+
+        <ion-title color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-item [routerLink]="item.redirectTo" *ngFor="let item of componentes | async " detail>
+      <ion-icon slot="start" [name]="item.icon" color="primary"></ion-icon>
+      <ion-label> {{item.name}} </ion-label> 
+    </ion-item>
+  </ion-list>
+  
+
+  <!--<ion-button [routerLink]="['/alert']" >
+    Alert
+  </ion-button>-->
+
+  <!--<ion-button [routerLink]="['/action-sheet']" >
+    Action-sheet
+  </ion-button> -->
+
+
+
+</ion-content>

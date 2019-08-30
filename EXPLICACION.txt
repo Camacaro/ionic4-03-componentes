@@ -1,0 +1,5 @@
+Componentes
+
+Se crean dos paginas alert y action-sheet
+
+y se crea un componente (header) dentro de ese componente se tiene un modulo, donde se tiene que declarar este componente y exportar, ese modulo se tiene que importar en app tambien se importa en el module de la paginia donde se utilizara

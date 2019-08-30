@@ -1,0 +1,45 @@
+<!-- <ion-app>
+
+    <app-menu></app-menu>
+
+  <ion-router-outlet id="principal"></ion-router-outlet>
+</ion-app> -->
+
+<!-- <implementando  ion-split-pane sirve para que aparezca el menu ajuro en pantallas grandes> -->
+
+
+
+<ion-app>
+        <!-- <when="md" es sus atributos este es para decirle en que tamano de pantalla aparecera ajuro> -->
+    <ion-split-pane when="md" contentId="principal">
+        <!-- de esta forma no se ve -->
+        <!-- <app-menu></app-menu> -->
+
+        <ion-menu side="start" menuId="primerMenu" contentId="principal">
+            <ion-header>
+                <ion-toolbar color="primary">
+                <ion-title>Menu Principal</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+        
+                    <!-- para verrar menu atumatico al clickear-->
+                    <ion-menu-toggle autoHide="false" *ngFor="let item of componentes | async">
+                        <!-- Como esto viene de un objervable tengo que pasarlo por un async -->
+                        <ion-item [routerLink]="item.redirectTo">
+            
+                            <ion-icon slot="start" [name]="item.icon"></ion-icon>
+                            <ion-label>{{item.name}}</ion-label>
+                            
+                        </ion-item>
+                    </ion-menu-toggle>
+        
+        
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+
+        <ion-router-outlet id="principal"></ion-router-outlet>
+    </ion-split-pane>   
+</ion-app>
