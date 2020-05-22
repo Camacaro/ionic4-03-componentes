@@ -7,7 +7,7 @@
     {
       "icon": "appstore",
       "name": "Alert",
-      "redirectTo": "alert"
+      "redirectTo": "/alert"
     },
     {
       "icon": "beaker",
